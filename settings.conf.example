@@ -1,0 +1,7 @@
+[DEFAULT]
+baseFileName = backup
+baseDir=/path/to/backup
+tempFolder = /tmp
+AK = AWS_USER_KEY
+Secret = AWS_SECRET
+bucket=AWS_BUCKET
