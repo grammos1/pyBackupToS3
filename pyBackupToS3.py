@@ -11,7 +11,7 @@ baseFileName = str(config['DEFAULT']['baseFileName'])
 baseDir = str(config['DEFAULT']['baseDir'])
 tempFolder = str(config['DEFAULT']['tempFolder'])
 AK = str(config['DEFAULT']['AK'])
-Secret = str(config['DEFAULT']['Secret'])
+secret = str(config['DEFAULT']['Secret'])
 bucket = str(config['DEFAULT']['bucket'])
 
 if not (baseDir.endswith('/')):
@@ -30,5 +30,5 @@ filename = baseFileName + timestr + ".tgz"
 
 make_tarfile(tempFolder + filename, baseDir)
 
-s3 = boto3.client('s3', aws_access_key_id=AK, aws_secret_access_key=Secret)
+s3 = boto3.client('s3', aws_access_key_id=AK, aws_secret_access_key=secret)
 s3.upload_file(tempFolder + filename, bucket, filename)
