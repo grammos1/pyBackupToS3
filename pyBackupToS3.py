@@ -30,8 +30,5 @@ filename = baseFileName + timestr + ".tgz"
 
 make_tarfile(tempFolder + filename, baseDir)
 
-s3 = boto3.client(
-    's3',
-    aws_access_key_id=AK,
-    aws_secret_access_key=Secret)
+s3 = boto3.client('s3', aws_access_key_id=AK, aws_secret_access_key=Secret)
 s3.upload_file(tempFolder + filename, bucket, filename)
